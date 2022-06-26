@@ -6,9 +6,6 @@
 $enddate = Get-Date $getenddate -format "yyyy-MM-dd"
 $startdate = Get-Date $getstartdate -format "yyyy-MM-dd"
 
-#$startdate = Get-Date -Date "2022-06-01"
-#$enddate = Get-Date -Date "2022-06-14"
-
 $difference = New-TimeSpan -Start $getstartdate -End $getenddate
 $days = [Math]::Ceiling($difference.TotalDays)
 
@@ -22,4 +19,4 @@ $activityEvents = @()
   $activityEvents += $activityevent
 }
 
-$activityEvents | Select * | Export-Csv -NoTypeInformation -Path "$(Get-Location)\Get-ActivityEvents.csv"
+$activityEvents | Select-Object * | Export-Csv -NoTypeInformation -Path "$(Get-Location)\Get-ActivityEvents.csv"

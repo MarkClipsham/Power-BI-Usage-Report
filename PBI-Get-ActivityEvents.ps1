@@ -3,7 +3,6 @@
 [datetime]$getenddate = Get-Date
 [datetime]$getstartdate = (Get-Date $getenddate).AddDays(-30)
 
-$enddate = Get-Date $getenddate -format "yyyy-MM-dd"
 $startdate = Get-Date $getstartdate -format "yyyy-MM-dd"
 
 $difference = New-TimeSpan -Start $getstartdate -End $getenddate
